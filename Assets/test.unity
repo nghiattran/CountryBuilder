@@ -119,11 +119,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ee96b9124df4097afad022d0973b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources:
-    agrResources:
-    - name: Food
-      quantity: 0
-    indResources: []
+  components:
+    population:
+      ageFactor: 0.05
+      totalPopulation: 0
+      children:
+        quantity: 0
+        education:
+          uneducated: 0
+          educated: 0
+          wellEducated: 0
+          highlyEducated: 0
+      teens:
+        quantity: 0
+        education:
+          uneducated: 0
+          educated: 0
+          wellEducated: 0
+          highlyEducated: 0
+      youngAdults:
+        quantity: 0
+        education:
+          uneducated: 0
+          educated: 0
+          wellEducated: 0
+          highlyEducated: 0
+      adults:
+        quantity: 0
+        education:
+          uneducated: 0
+          educated: 0
+          wellEducated: 0
+          highlyEducated: 0
+      seniors:
+        quantity: 0
+        education:
+          uneducated: 0
+          educated: 0
+          wellEducated: 0
+          highlyEducated: 0
+    building:
+      elementarySchool:
+        quantity: 0
+        capacity: 0
+        enrollment: 0
+        ratio: 0
+      highSchool:
+        quantity: 0
+        capacity: 1000
+        enrollment: 0
+        ratio: 0
+      university:
+        quantity: 0
+        capacity: 5000
+        enrollment: 0
+        ratio: 0
+    resources:
+      agrResources:
+      - name: Food
+        production: 0
+        demand: 0
+        comsumption: 0
+        storage: 0
+        baseResource:
+          basePrice: 0
+      indResources: []
 --- !u!95 &277258848
 Animator:
   serializedVersion: 3
@@ -154,7 +214,7 @@ Transform:
   m_Children:
   - {fileID: 2119386864}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514924177
 GameObject:
@@ -225,8 +285,50 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1668778359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1668778360}
+  - component: {fileID: 1668778361}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668778360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668778359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668778361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668778359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c15b3570e5b4921a730bfc5f3c9b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settlements: []
+  dayCycle: 2
 --- !u!1 &1772226320
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2069444308
 GameObject:

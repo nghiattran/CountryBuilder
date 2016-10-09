@@ -5,16 +5,15 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class Demand : SettlementComponent {
-		Population population;
-
-		public void Start(SettlementComponents settlementComponents) {
-			base.Start(settlementComponents);
-
-			population = settlementComponents.population;
-		}
-
 		override public void Update () {
-			
+			AgricultureWrapper tmp = settlementComponents.resources
+										.GetAgricultureResource("Food");
+
+			if (tmp != null) {
+				tmp.SetDemand(
+					AgricultureResource.CalculateDemand(settlementComponents.population)
+				);
+			}
 		}
 	}
 }

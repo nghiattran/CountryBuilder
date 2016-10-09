@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder {
 	public class Food : AgricultureResource {
-		public Food() : base() {
+		public Food() : base("Food") {
 
 		}
 
-		override public void CalculateDemand(Population population) {
+		// override static public void CalculateDemand(Population population) {
 
-		}
+		// }
 	}
 }

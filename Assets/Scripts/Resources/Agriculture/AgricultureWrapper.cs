@@ -6,7 +6,6 @@ namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class AgricultureWrapper {
 		[SerializeField] string name;
-		[SerializeField] int quantity = 0;
 		[SerializeField] int production = 0;
 		[SerializeField] int demand = 0;
 		[SerializeField] int comsumption = 0;
@@ -22,14 +21,6 @@ namespace NghiaTTran.CountryBuilder {
 
 		public string GetName() {
 			return name;
-		}
-
-		public int GetQuantity() {
-			return quantity;
-		}
-
-		public void AddQuantity(int amount) {
-			quantity += amount;
 		}
 
 		public void SetDemand(int _demand) {
@@ -56,8 +47,8 @@ namespace NghiaTTran.CountryBuilder {
 			return comsumption;
 		}
 
-		public void SetStorage(int _storage) {
-			storage = _storage;
+		public void AddStorage(int _storage) {
+			storage += _storage;
 		}
 
 		public int GetStorage() {

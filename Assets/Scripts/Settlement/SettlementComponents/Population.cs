@@ -107,7 +107,7 @@ namespace NghiaTTran.CountryBuilder {
 			return adults.education;
 		}
 
-		public int GetSenior() {
+		public int GetSeniors() {
 			return seniors.quantity;
 		}
 

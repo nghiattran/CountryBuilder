@@ -7,7 +7,7 @@ namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public abstract class IndustrialResource : Resource {
 
-		protected IndustrialResource() : base() {}
+		protected IndustrialResource(string name) : base(name) {}
 
 		abstract public void CalculateDemand();
 	}
