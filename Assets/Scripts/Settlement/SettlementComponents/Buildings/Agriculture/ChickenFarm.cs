@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
-	public class ChickenFarm {
-
+	[System.Serializable]
+	public class ChickenFarm : AgricultureBuilding {
+		public override void CalculateProduction(Population population) {
+			
+		}
 	}
 }

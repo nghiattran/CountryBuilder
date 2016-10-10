@@ -50,11 +50,15 @@ namespace NghiaTTran.CountryBuilder {
 			for (int i = 0; i < amounts.Length; i++) {
 				amounts[i] += diffAmounts[i] * Math.Sign(sign);
 			}
-			
-			uneducated =(float) amounts[0] / populationStruct.quantity;
-			educated = (float) amounts[1] / populationStruct.quantity;
-			wellEducated = (float) amounts[2] / populationStruct.quantity;
-			highlyEducated = (float) amounts[3] / populationStruct.quantity;
+
+			uneducated = CalculateRatio(amounts[0], populationStruct.quantity);
+			educated = CalculateRatio(amounts[1], populationStruct.quantity);
+			wellEducated = CalculateRatio(amounts[2], populationStruct.quantity);
+			highlyEducated = CalculateRatio(amounts[3], populationStruct.quantity);
+		}
+
+		float CalculateRatio(int amount, int total) {
+			return (float) Math.Round((float) amount / total, 2);
 		}
 
 		string ToString(int[] array) {

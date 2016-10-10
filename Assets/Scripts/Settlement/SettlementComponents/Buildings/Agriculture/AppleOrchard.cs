@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public class DairyFarm : AgricultureBuilding {
+	public class AppleOrchard : AgricultureBuilding {
+
 		public override void CalculateProduction(Population population) {
 			
 		}

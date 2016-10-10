@@ -22,13 +22,13 @@ namespace NghiaTTran.CountryBuilder {
 		[HideInInspector] public Demand demand;
 		[HideInInspector] public Consumption consumption;
 		[HideInInspector] public Storage storage;
-		[SerializeField] public Building building;
+		[SerializeField] public Structure structure;
 		[SerializeField] public Area area;
 		[HideInInspector] public Production production;
 		public Resources resources;
 
 		// public SettlementComponents (Population _population, Demand _demand, 
-		// 	Consumption _consumption, Storage _storage, Building _building, 
+		// 	Consumption _consumption, Storage _storage, Structure _building, 
 		// 	Production _production, ref Resources _resources)
 		// {
 		// 	resources = _resources;
@@ -36,7 +36,7 @@ namespace NghiaTTran.CountryBuilder {
 		// 	demand = _demand;
 		// 	consumption = _consumption;
 		// 	storage = _storage;
-		// 	building = _building;
+		// 	structure = _building;
 		// 	production = _production;
 		// }
 
@@ -46,7 +46,7 @@ namespace NghiaTTran.CountryBuilder {
 			demand = new Demand();
 			consumption = new Consumption();
 			storage = new Storage();
-			building = new Building();
+			structure = new Structure();
 			production = new Production();
 			area = new Area();
 		}
@@ -56,7 +56,7 @@ namespace NghiaTTran.CountryBuilder {
 			demand.Init();
 			consumption.Init();
 			storage.Init();
-			building.Init();
+			structure.Init();
 			production.Init();
 		}
 
@@ -65,7 +65,7 @@ namespace NghiaTTran.CountryBuilder {
 			demand.Start(this);
 			consumption.Start(this);
 			storage.Start(this);
-			building.Start(this);
+			structure.Start(this);
 			production.Start(this);
 
 			resources.Start();
@@ -76,7 +76,7 @@ namespace NghiaTTran.CountryBuilder {
 			demand.Update();
 			consumption.Update();
 			storage.Update();
-			building.Update();
+			structure.Update();
 			production.Update();
 		}
 	}

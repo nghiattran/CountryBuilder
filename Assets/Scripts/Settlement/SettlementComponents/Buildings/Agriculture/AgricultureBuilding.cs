@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public abstract class AgricultureBuilding {
+	public abstract class AgricultureBuilding: Building {
 		[SerializeField] protected int workers;
-
+		
 		public abstract void CalculateProduction(Population population);
 	}
 }

@@ -52,11 +52,7 @@ namespace NghiaTTran.CountryBuilder {
 		[SerializeField] PopulationStruct adults = new PopulationStruct("adults");
 		[SerializeField] PopulationStruct seniors = new PopulationStruct("seniors");
 
-		Building building;
-
 		override public void Update () {
-			building = settlementComponents.building;
-
 			AgeUp();
 
 			Sum();

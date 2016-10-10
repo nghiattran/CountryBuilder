@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NghiaTTran.CountryBuilder;
 
-namespace NghiaTTran.CountryBuilder {
-
+namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public abstract class School {
-		[SerializeField] protected int quantity;
+	public abstract class School : Building {
 		[SerializeField] protected int capacity;
 		[SerializeField] protected int enrollment;
 		[SerializeField] protected float ratio;
