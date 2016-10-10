@@ -19,7 +19,7 @@ namespace NghiaTTran.CountryBuilder {
 		[SerializeField] DairyFarm dairyFarm;
 		[SerializeField] WheatField wheatField;
 
-		override public void Update () {
+		override public void GameUpdate () {
 			UpdateEducation();
 		}
 

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class Demand : SettlementComponent {
-		override public void Update () {
+		override public void GameUpdate () {
 			AgricultureWrapper tmp = settlementComponents.resources
 										.GetAgricultureResource("Food");
 

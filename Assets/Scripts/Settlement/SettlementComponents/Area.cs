@@ -8,7 +8,7 @@ namespace NghiaTTran.CountryBuilder {
 		[SerializeField] int farmArea;
 		[SerializeField] int woodArea;
 
-		override public void Update () {
+		override public void GameUpdate () {
 		}
 	}
 }

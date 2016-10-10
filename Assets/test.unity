@@ -124,56 +124,90 @@ MonoBehaviour:
       ageFactor: 0.05
       totalPopulation: 0
       children:
-        quantity: 0
+        quantity: 1000
         education:
-          uneducated: 0
+          uneducated: 1
           educated: 0
           wellEducated: 0
           highlyEducated: 0
       teens:
         quantity: 0
         education:
-          uneducated: 0
+          uneducated: 1
           educated: 0
           wellEducated: 0
           highlyEducated: 0
       youngAdults:
-        quantity: 0
+        quantity: 1000
         education:
-          uneducated: 0
+          uneducated: 1
           educated: 0
           wellEducated: 0
           highlyEducated: 0
       adults:
-        quantity: 0
+        quantity: 1000
         education:
-          uneducated: 0
+          uneducated: 1
           educated: 0
           wellEducated: 0
           highlyEducated: 0
       seniors:
-        quantity: 0
+        quantity: 1000
         education:
-          uneducated: 0
+          uneducated: 1
           educated: 0
           wellEducated: 0
           highlyEducated: 0
-    building:
+    structure:
       elementarySchool:
-        quantity: 0
-        capacity: 0
-        enrollment: 0
-        ratio: 0
-      highSchool:
-        quantity: 0
+        quantity: 1
+        price:
+          money: 0
         capacity: 1000
         enrollment: 0
-        ratio: 0
+        ratio: 0.1
+      highSchool:
+        quantity: 1
+        price:
+          money: 0
+        capacity: 1000
+        enrollment: 0
+        ratio: 0.1
       university:
         quantity: 0
+        price:
+          money: 0
         capacity: 5000
         enrollment: 0
-        ratio: 0
+        ratio: 0.1
+      appleOrchard:
+        quantity: 0
+        price:
+          money: 0
+        workers: 0
+      bakery:
+        quantity: 0
+        price:
+          money: 0
+        workers: 0
+      chickenFarm:
+        quantity: 0
+        price:
+          money: 0
+        workers: 0
+      dairyFarm:
+        quantity: 0
+        price:
+          money: 0
+        workers: 0
+      wheatField:
+        quantity: 0
+        price:
+          money: 0
+        workers: 0
+    area:
+      farmArea: 0
+      woodArea: 0
     resources:
       agrResources:
       - name: Food

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 
 	[System.Serializable]
-	public class Education : SettlementComponent {
+	public class Education {
 		[SerializeField] float uneducated;
 		[SerializeField] float educated;
 		[SerializeField] float wellEducated;
@@ -21,7 +21,7 @@ namespace NghiaTTran.CountryBuilder {
 			populationStruct = _populationStruct;
 		}
 
-		override public void Update () {
+		public void GameUpdate () {
 			ratios[0] = uneducated;
 			ratios[1] = educated;
 			ratios[2] = wellEducated;
