@@ -15,8 +15,8 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		void UpdateEducation() {
-			university.CalculateEnrollment(settlementComponents.population);
-			highSchool.CalculateEnrollment(settlementComponents.population);
+			// university.CalculateEnrollment(settlementComponents.population);
+			// highSchool.CalculateEnrollment(settlementComponents.population);
 			elementarySchool.CalculateEnrollment(settlementComponents.population);
 		}
 	}
