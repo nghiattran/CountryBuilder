@@ -12,14 +12,17 @@ namespace NghiaTTran.CountryBuilder.Buildings {
 
 		public School(int _capacity) {
 			capacity = _capacity;
+			multiplier = 1f;
 		}
-
-		public School() {}
 
 		public abstract void CalculateEnrollment(Population population);
 
 		public int GetTotalCapacity() {
 			return quantity * capacity;
+		}
+
+		protected int GetGraduators(int enrollment) {
+			return (int) (enrollment * multiplier * ratio);
 		}
 	}
 

@@ -6,7 +6,6 @@ using UnityEditor;
 namespace NghiaTTran.CountryBuilder {
 	[RequireComponent(typeof(SettlementComponents))]
 	public class Settlement : MonoBehaviour {
-		Resources resources;
 		SettlementComponents components;
 
 		protected Settlement() {
@@ -17,7 +16,6 @@ namespace NghiaTTran.CountryBuilder {
 			GameManager.instance.Register(this);
 
 			components = GetComponent<SettlementComponents>();
-			// components.Start();
 		}
 
 		void Update() {
@@ -27,11 +25,5 @@ namespace NghiaTTran.CountryBuilder {
 		public void GameUpdate() {
 			components.GameUpdate();
 		}
-
-		// [ContextMenu("Init")]
-	 //    public void Init() {
-	 //        resources = ResourceFactory.GetInstance().CloneResources();
-	 //        components = new SettlementComponents(ref resources);
-	 //    }
 	}
 }

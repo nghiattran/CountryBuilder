@@ -66,7 +66,7 @@ namespace NghiaTTran.CountryBuilder {
 			// adults.AgeUp(ageFactor, seniors);
 			// youngAdults.AgeUp(ageFactor, adults);
 			// teens.AgeUp(ageFactor, youngAdults);
-			children.AgeUp(ageFactor, teens);
+			// children.AgeUp(ageFactor, teens);
 		}
 
 		public int GetChildren() {

@@ -4,10 +4,9 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public class AppleOrchard : AgricultureBuilding {
-
-		public override void CalculateProduction(Population population) {
-			
-		}
+	public class Farm {
+		[SerializeField] float arce;
+		[SerializeField] [Range(0.0F, 1F)]
+		float multiplier;
 	}
 }

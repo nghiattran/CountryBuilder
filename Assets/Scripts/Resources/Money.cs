@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NghiaTTran.CountryBuilder.Buildings {
+namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
-	public class IFarm {
-		
+	public class Money : Resource {
+		public Money():base("Money") {
+
+		}
 	}
 }

@@ -6,12 +6,15 @@ using NghiaTTran.CountryBuilder;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public class ElementarySchool : School {
+	public class HighSchool : School {
+		public HighSchool(): base(1000) {
+			ratio = 0.1f;
+		}
 
 		public override void CalculateEnrollment(Population population) {
-			Education education = population.GetChildrenEducation();
-			enrollment = Math.Min(education.GetUneducated(), GetTotalCapacity());
-			education.AddEducated((int)(enrollment * ratio));
+			Education education = population.GetTeensEducation();
+			enrollment = Math.Min(education.GetEducated(), GetTotalCapacity());
+			education.AddWellEducated(GetGraduators(enrollment));
 		}
 	}
 }

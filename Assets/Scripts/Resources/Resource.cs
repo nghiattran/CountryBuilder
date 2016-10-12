@@ -5,8 +5,9 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class Resource {
+		[SerializeField] private string name;
 		[SerializeField] private float basePrice;
-		public readonly string name;
+		[SerializeField] private int quantity;
 
 		protected Resource(string _name) {
 			name = _name;
@@ -14,6 +15,10 @@ namespace NghiaTTran.CountryBuilder {
 
 		public string GetName() {
 			return name;
+		}
+
+		public int GetQuantity() {
+			return quantity;
 		}
 	}
 }

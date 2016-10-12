@@ -100,6 +100,14 @@ GameObject:
   m_Component:
   - component: {fileID: 277258849}
   - component: {fileID: 277258848}
+  - component: {fileID: 277258857}
+  - component: {fileID: 277258856}
+  - component: {fileID: 277258855}
+  - component: {fileID: 277258854}
+  - component: {fileID: 277258853}
+  - component: {fileID: 277258852}
+  - component: {fileID: 277258851}
+  - component: {fileID: 277258850}
   - component: {fileID: 277258847}
   m_Layer: 0
   m_Name: House_1
@@ -119,105 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ee96b9124df4097afad022d0973b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  components:
-    population:
-      ageFactor: 0.05
-      totalPopulation: 0
-      children:
-        quantity: 1000
-        education:
-          uneducated: 1
-          educated: 0
-          wellEducated: 0
-          highlyEducated: 0
-      teens:
-        quantity: 0
-        education:
-          uneducated: 1
-          educated: 0
-          wellEducated: 0
-          highlyEducated: 0
-      youngAdults:
-        quantity: 1000
-        education:
-          uneducated: 1
-          educated: 0
-          wellEducated: 0
-          highlyEducated: 0
-      adults:
-        quantity: 1000
-        education:
-          uneducated: 1
-          educated: 0
-          wellEducated: 0
-          highlyEducated: 0
-      seniors:
-        quantity: 1000
-        education:
-          uneducated: 1
-          educated: 0
-          wellEducated: 0
-          highlyEducated: 0
-    structure:
-      elementarySchool:
-        quantity: 1
-        price:
-          money: 0
-        capacity: 1000
-        enrollment: 0
-        ratio: 0.1
-      highSchool:
-        quantity: 1
-        price:
-          money: 0
-        capacity: 1000
-        enrollment: 0
-        ratio: 0.1
-      university:
-        quantity: 0
-        price:
-          money: 0
-        capacity: 5000
-        enrollment: 0
-        ratio: 0.1
-      appleOrchard:
-        quantity: 0
-        price:
-          money: 0
-        workers: 0
-      bakery:
-        quantity: 0
-        price:
-          money: 0
-        workers: 0
-      chickenFarm:
-        quantity: 0
-        price:
-          money: 0
-        workers: 0
-      dairyFarm:
-        quantity: 0
-        price:
-          money: 0
-        workers: 0
-      wheatField:
-        quantity: 0
-        price:
-          money: 0
-        workers: 0
-    area:
-      farmArea: 0
-      woodArea: 0
-    resources:
-      agrResources:
-      - name: Food
-        production: 0
-        demand: 0
-        comsumption: 0
-        storage: 0
-        baseResource:
-          basePrice: 0
-      indResources: []
 --- !u!95 &277258848
 Animator:
   serializedVersion: 3
@@ -250,6 +159,283 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277258850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73008a841be3543ed90ddafe1c50bd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  population: {fileID: 0}
+  demand: {fileID: 0}
+  consumption: {fileID: 0}
+  storage: {fileID: 0}
+  structure: {fileID: 0}
+  area: {fileID: 0}
+  production: {fileID: 0}
+  resources:
+    agrResources:
+    - name: Apple
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    - name: Chicken
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    - name: Cow
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    - name: Egg
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    - name: Milk
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    - name: Wheat
+      production: 0
+      demand: 0
+      comsumption: 0
+      storage: 0
+      baseResource:
+        name: 
+        basePrice: 0
+        quantity: 0
+    indResources: []
+    money:
+      name: Money
+      basePrice: 0
+      quantity: 0
+--- !u!114 &277258851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94a21e53c3e341c3ace6b6ca924d15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ageFactor: 0.05
+  totalPopulation: 0
+  children:
+    quantity: 10000
+    education:
+      uneducated: 1
+      educated: 0
+      wellEducated: 0
+      highlyEducated: 0
+  teens:
+    quantity: 0
+    education:
+      uneducated: 0
+      educated: 0
+      wellEducated: 0
+      highlyEducated: 0
+  youngAdults:
+    quantity: 10000
+    education:
+      uneducated: 1
+      educated: 0
+      wellEducated: 0
+      highlyEducated: 0
+  adults:
+    quantity: 10000
+    education:
+      uneducated: 1
+      educated: 0
+      wellEducated: 0
+      highlyEducated: 0
+  seniors:
+    quantity: 0
+    education:
+      uneducated: 0
+      educated: 0
+      wellEducated: 0
+      highlyEducated: 0
+--- !u!114 &277258852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad4d10214473424499737d37a0dee83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childrenMultiplier: 2
+  teensMultiplier: 4
+  youngAdultsMultiplier: 6
+  adultsMultiplier: 7
+  seniorsMultiplier: 5
+  foodDemand: 0
+--- !u!114 &277258853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9351c5802c614521b2a7e1a84f515c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &277258854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e6e3a27b9504e66a420d10604464a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &277258855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574a583778174434ba5a04102f1da6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementarySchool:
+    quantity: 5
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 1
+    capacity: 300
+    enrollment: 0
+    ratio: 0.1
+  highSchool:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 1
+    capacity: 1000
+    enrollment: 0
+    ratio: 0.1
+  university:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0.1
+    capacity: 5000
+    enrollment: 0
+    ratio: 0
+  appleOrchard:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0
+    workers: 0
+    output:
+    - name: Apple
+      basePrice: 0
+      quantity: 0
+    farm:
+      arce: 0
+      multiplier: 0
+  bakery:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0
+    workers: 0
+    output: []
+  chickenFarm:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0
+    workers: 0
+    output: []
+  dairyFarm:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0
+    workers: 0
+    output: []
+  wheatField:
+    quantity: 0
+    buildPrice:
+      money: 0
+      resources: []
+    multiplier: 0
+    workers: 0
+    output: []
+    farm:
+      arce: 0
+      multiplier: 0
+--- !u!114 &277258856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca652ac4c42c740a182859a7b9116e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmArea: 10000
+  woodArea: 0
+--- !u!114 &277258857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277258846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e088df3e205f8454f99d1e2994fd3078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514924177
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +624,7 @@ GameObject:
   - component: {fileID: 2069444311}
   - component: {fileID: 2069444310}
   - component: {fileID: 2069444309}
+  - component: {fileID: 2069444314}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -506,13 +693,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2069444308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 16.1, y: 132.5, z: -133.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &2069444314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069444308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d0f586d7176406e9e415fd2bd8f6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2119386863
 GameObject:
   m_ObjectHideFlags: 0

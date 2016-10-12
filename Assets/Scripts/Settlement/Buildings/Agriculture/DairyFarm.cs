@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public class Building {
-		[SerializeField] protected int quantity;
-		[SerializeField] BuildPrice price;
+	public class DairyFarm : AgricultureBuilding {
+		public override List<Resource> CalculateProduction(Population population) {
+			return null;
+		}
 	}
 }

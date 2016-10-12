@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
-	public class WheatField : AgricultureBuilding {
-		public override void CalculateProduction(Population population) {
-			
+	public class Bakery : AgricultureBuilding {
+		public override List<Resource> CalculateProduction(Population population) {
+			return null;
 		}
 	}
 }
