@@ -9,7 +9,6 @@ namespace NghiaTTran.CountryBuilder {
 	public class PopulationStruct {
 		[SerializeField] public int quantity;
 		[SerializeField] public Education education;
-		// PopulationStruct nextGen;
 		public readonly string name;
 
 		public PopulationStruct(string _name) {
@@ -27,7 +26,7 @@ namespace NghiaTTran.CountryBuilder {
 			quantity -= marginal;
 			education.AgeUp(marginal);
 
-			education.Update();
+			education.GameUpdate();
 		}
 
 		public void AgeUp(float ageFactor, PopulationStruct nextGen) {
@@ -37,11 +36,10 @@ namespace NghiaTTran.CountryBuilder {
 
 			education.AgeUp(marginal, nextGen.education);
 
-			education.Update();
+			education.GameUpdate();
 		}
 	}
 
-	[System.Serializable]
 	public class Population : SettlementComponent {
 		[SerializeField] float ageFactor = 0.05f;
 
@@ -52,11 +50,7 @@ namespace NghiaTTran.CountryBuilder {
 		[SerializeField] PopulationStruct adults = new PopulationStruct("adults");
 		[SerializeField] PopulationStruct seniors = new PopulationStruct("seniors");
 
-		Building building;
-
-		override public void Update () {
-			building = settlementComponents.building;
-
+		override public void GameUpdate () {
 			AgeUp();
 
 			Sum();
@@ -68,11 +62,11 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		void AgeUp() {
-			seniors.AgeUp(ageFactor);
-			adults.AgeUp(ageFactor, seniors);
-			youngAdults.AgeUp(ageFactor, adults);
-			teens.AgeUp(ageFactor, youngAdults);
-			children.AgeUp(ageFactor, teens);
+			// seniors.AgeUp(ageFactor);
+			// adults.AgeUp(ageFactor, seniors);
+			// youngAdults.AgeUp(ageFactor, adults);
+			// teens.AgeUp(ageFactor, youngAdults);
+			// children.AgeUp(ageFactor, teens);
 		}
 
 		public int GetChildren() {

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 
 	[System.Serializable]
-	public class Education : SettlementComponent {
+	public class Education {
 		[SerializeField] float uneducated;
 		[SerializeField] float educated;
 		[SerializeField] float wellEducated;
@@ -21,7 +21,7 @@ namespace NghiaTTran.CountryBuilder {
 			populationStruct = _populationStruct;
 		}
 
-		override public void Update () {
+		public void GameUpdate () {
 			ratios[0] = uneducated;
 			ratios[1] = educated;
 			ratios[2] = wellEducated;
@@ -35,20 +35,38 @@ namespace NghiaTTran.CountryBuilder {
 		public void AddPeople(int[] diffAmounts, int sign) {
 			AssignRatios();
 			int[] amounts = new int[4];
-			amounts = CalculateRatio(populationStruct.quantity, ratios).ToArray();
-			float sum = (float) amounts.Sum() + diffAmounts.Sum();
-			if (sum <= 0) {
-				return;
-			}
-			
+
+			// Amount of people grown up
+			int diffSum = diffAmounts.Sum();
+
+			// Calculate people education before grown up
+			amounts = CalculateRatio(
+						populationStruct.quantity - Math.Sign(sign) * diffSum, 
+						ratios
+					)
+					.ToArray();
+
+			// Recalculate education ratio after updated
 			for (int i = 0; i < amounts.Length; i++) {
 				amounts[i] += diffAmounts[i] * Math.Sign(sign);
 			}
 
-			uneducated = amounts[0] / sum;
-			educated = amounts[1] / sum;
-			wellEducated = amounts[2] / sum;
-			highlyEducated = amounts[3] / sum;
+			uneducated = CalculateRatio(amounts[0], populationStruct.quantity);
+			educated = CalculateRatio(amounts[1], populationStruct.quantity);
+			wellEducated = CalculateRatio(amounts[2], populationStruct.quantity);
+			highlyEducated = CalculateRatio(amounts[3], populationStruct.quantity);
+		}
+
+		float CalculateRatio(int amount, int total) {
+			return (float) Math.Round((float) amount / total, 2);
+		}
+
+		string ToString(int[] array) {
+			string line = "";
+			for (int i = 0; i < array.Length; i++) {
+				line += array[i] + " ";
+			}
+			return line;
 		}
 
 		public int GetUneducated() {
@@ -56,6 +74,9 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		public void AddUneducated(int amount) {
+			if (amount == 0 )
+				return;
+
 			AddPeople(new int[] {amount, 0, 0, 0});
 		}
 
@@ -64,6 +85,9 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		public void AddEducated(int amount) {
+			if (amount == 0 )
+				return;
+
 			AddPeople(new int[] {-amount, amount, 0, 0});
 		}
 
@@ -72,6 +96,9 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		public void AddWellEducated(int amount) {
+			if (amount == 0 )
+				return;
+
 			AddPeople(new int[] {0, -amount, amount, 0});
 		}
 
@@ -80,15 +107,20 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		public void AddHighlyEducated(int amount) {
+			if (amount == 0 )
+				return;
+
 			AddPeople(new int[] {0, 0, -amount, amount});
 		}
 
 		public int[] AgeUp(int amount) {
 			AssignRatios();
-
 			int[] diffAmounts = new int[4];
-			diffAmounts = CalculateRatio(amount, ratios).ToArray();
 
+			if (diffAmounts.All(x => x != 0))
+				return null;
+
+			diffAmounts = CalculateRatio(amount, ratios).ToArray();
 			AddPeople(diffAmounts, -1);
 
 			return diffAmounts;
@@ -96,6 +128,10 @@ namespace NghiaTTran.CountryBuilder {
 
 		public void AgeUp(int amount, Education nextGen) {
 			int[] diffAmounts = AgeUp(amount);
+
+			if (diffAmounts == null)
+				return;
+
 			nextGen.AddPeople(diffAmounts);
 		}
 
@@ -109,16 +145,10 @@ namespace NghiaTTran.CountryBuilder {
 		static public List<int> CalculateRatio(int wholeNumer, float[] ratios) {
 			List<int> results = new List<int>();
 			int sum = 0;
-			string debug = "";
-			string ratio = "";
 			for (int i = 0; i < ratios.Length; i++) {
 				results.Add((int) (wholeNumer * ratios[i]));
 				sum += results[i];
-				debug += results[i] + " ";
-				ratio += ratios[i] + " ";
 			}
-			// Debug.Log(debug);
-			// Debug.Log(ratio);
 			return results;
 		}
 	}

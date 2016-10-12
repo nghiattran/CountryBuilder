@@ -5,7 +5,7 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class Consumption : SettlementComponent {
-		override public void Update () {
+		override public void GameUpdate () {
 			
 		}
 	}

@@ -6,14 +6,25 @@ using UnityEngine;
 namespace NghiaTTran.CountryBuilder {
 	[System.Serializable]
 	public class Resources {
+		[Header("Agriculture resources")]
 		[SerializeField] public List<AgricultureWrapper> agrResources;
-		[SerializeField] public List<IndustrialWrapper> indResources;
-		[SerializeField] public Dictionary<string, AgricultureWrapper> agrResourceDict;
-		[SerializeField] public Dictionary<string, IndustrialWrapper> indResourceDict;
+		[Space(10)]
 
+		[Header("Agriculture resources")]
+		[SerializeField] public List<IndustrialWrapper> indResources;
+		[Space(10)]
+
+		[Header("Agriculture resources")]
+		[SerializeField] public Money money;
+
+		public Dictionary<string, AgricultureWrapper> agrResourceDict;
+		public Dictionary<string, IndustrialWrapper> indResourceDict;
+		
 		public Resources(List<AgricultureResource> _agrResources, 
 			List<IndustrialResource> _indResources) 
 		{
+			money = new Money();
+
 			agrResources = new List<AgricultureWrapper>();
 			indResources = new List<IndustrialWrapper>();
 
@@ -50,6 +61,10 @@ namespace NghiaTTran.CountryBuilder {
 				wrapper.Add(instance);
 			}
 		}
+
+		public void SetProduction(string name, int production) {
+			agrResourceDict[name].SetProduction(production);
+		}
 	}
 
 	public class ResourceFactory {
@@ -61,7 +76,12 @@ namespace NghiaTTran.CountryBuilder {
 			agrResources = new List<AgricultureResource>();
 			indResources = new List<IndustrialResource>();
 
-			agrResources.Add(new Food());
+			agrResources.Add(new Apple());
+			agrResources.Add(new Chicken());
+			agrResources.Add(new Cow());
+			agrResources.Add(new Egg());
+			agrResources.Add(new Milk());
+			agrResources.Add(new Wheat());
 		}
 
 		static public ResourceFactory GetInstance() {

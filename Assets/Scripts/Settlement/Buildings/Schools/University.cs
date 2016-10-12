@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NghiaTTran.CountryBuilder;
 
-namespace NghiaTTran.CountryBuilder {
+namespace NghiaTTran.CountryBuilder.Buildings {
 	[System.Serializable]
 	public class University : School {
-		public University() {
-			capacity = 5000;
+		public University():base(5000) {
+			multiplier = 0.1f;
 		}
 
 		public override void CalculateEnrollment(Population population) {
@@ -23,9 +24,13 @@ namespace NghiaTTran.CountryBuilder {
 			enrollment = Math.Min(totalStudent, GetTotalCapacity());
 
 			float adultRatio = adultsEducation.GetWellEducated() / totalStudent;
-
-			adultsEducation.AddHighlyEducated((int)(enrollment * adultRatio * ratio));
-			youngAdultsEducation.AddHighlyEducated((int)(enrollment * (1 - adultRatio) * ratio));
+			
+			adultsEducation.AddHighlyEducated(GetGraduators(
+				(int)(enrollment * adultRatio))
+			);
+			youngAdultsEducation.AddHighlyEducated(GetGraduators(
+				(int)(enrollment * (1 - adultRatio)))
+			);
 		}
 	}
 }

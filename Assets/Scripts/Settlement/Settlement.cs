@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEditor;
 
 namespace NghiaTTran.CountryBuilder {
-	[System.Serializable]
+	[RequireComponent(typeof(SettlementComponents))]
 	public class Settlement : MonoBehaviour {
-		Resources resources;
-		[SerializeField] SettlementComponents components;
+		SettlementComponents components;
 
 		protected Settlement() {
 
@@ -16,7 +15,7 @@ namespace NghiaTTran.CountryBuilder {
 		void Start() {
 			GameManager.instance.Register(this);
 
-			components.Start();
+			components = GetComponent<SettlementComponents>();
 		}
 
 		void Update() {
@@ -24,13 +23,7 @@ namespace NghiaTTran.CountryBuilder {
 		}
 
 		public void GameUpdate() {
-			components.Update();
+			components.GameUpdate();
 		}
-
-		[ContextMenu("Init")]
-	    public void Init() {
-	        resources = ResourceFactory.GetInstance().CloneResources();
-	        components = new SettlementComponents(ref resources);
-	    }
 	}
 }

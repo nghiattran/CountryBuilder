@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace NghiaTTran.CountryBuilder {
-	[System.Serializable]
-	public class Storage : SettlementComponent {
-		override public void GameUpdate () {
-			
-		}
+	public class Cow : AgricultureResource {
+		public Cow(): base("Cow") {}
 	}
 }
